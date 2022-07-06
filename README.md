@@ -2,13 +2,12 @@
 
 
 
-## Getting started
+## Introduction about Alpha Miner
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+The α-algorithm or α-miner is an algorithm used in process mining, aimed at reconstructing causality from a set of sequences of events. It was first put forward by van der Aalst, Weijters and Măruşter.[1] The goal of Alpha miner is to convert the event log into a workflow-net based on the relations between various activities in the event log. An event log is a multi-set of traces, and a trace is a sequence of activity names. 
+Link: https://en.wikipedia.org/wiki/Alpha_algorithm
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
+## Installation
 
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
