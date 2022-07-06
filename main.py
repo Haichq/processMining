@@ -80,6 +80,11 @@ def contact():
 
 
 
-	
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+def main():
+	if __name__ == '__main__':
+		app.run(host="::1", port = 9012)
+main()
