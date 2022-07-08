@@ -7,6 +7,7 @@ from graphviz import Digraph
 from alphaminer import test_data
 from handle_xes import handle_test
 
+
 hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
 app = Flask(__name__)
 
@@ -74,7 +75,7 @@ def upload():
 	
 app.register_blueprint(hai)
 
-@app.route('/ports/9012/about')
+@app.route('/about')
 def about():
     return render_template("about.html")
 
