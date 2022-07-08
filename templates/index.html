@@ -10,16 +10,17 @@
     <h3>{{ utc_dt }}</h3>
 	{% if image %}
 	   <div align="center"><img src="/ports/9012/static/somefile.png" /></div>
+	{% else %}
+		<form method=post enctype=multipart/form-data action="ports/9012/upload">
+		<!-- <form method=post enctype=multipart/form-data"> -->
+		<h3 align="center">Upload File</h3>
+		<div align="center">
+			<div class="custom-file">
+			<input type=file name=file>
+			<input type=submit value=Upload>
+			</div>
+		</div>
+		</form>
     {% endif %}
-	<form method=post enctype=multipart/form-data action="ports/9012/upload">
-	<!-- <form method=post enctype=multipart/form-data"> -->
-	<h3 align="center">Upload File</h3>
-	<div align="center">
-		<div class="custom-file">
-		<input type=file name=file>
-		<input type=submit value=Upload>
-	</div>
-	</div>
-	</form>
 </body>
 </html>
