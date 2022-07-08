@@ -69,7 +69,9 @@ def upload():
 
 		image = parse_data(lll)
 		print(lll)
-	return redirect(url_for("image", image=image), code=302)
+	# return redirect(url_for("image", image=image), code=302)
+	return redirect(url_for("/ports/9012/static/somefile.png", image=image), code=302)
+	
 app.register_blueprint(hai)
 
 @app.route('/about')
