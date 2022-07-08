@@ -79,7 +79,7 @@ def about():
     return render_template("about.html")
 
 
-@app.route('/ports/9012/contact')
+@app.route('/contact')
 def contact():
     return render_template("contact.html")
 
