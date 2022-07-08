@@ -1,6 +1,22 @@
 import os
+# from bs4 import BeautifulSoup
 from xml.dom.minidom import parse
 
+
+# dom1 = parse('datasets/billinstances.xes')
+
+# traces = dom1.getElementsByTagName("trace")
+# L = []
+# for trace in traces:
+#  event_list = []
+#  events = trace.getElementsByTagName("event")
+#  for event in events:
+#   event_list.append(event.childNodes[5].attributes["value"].value)
+
+#  L.append(event_list)
+# print(L)
+
+#
 dom1 = parse('datasets/L1.xes')
 
 traces = dom1.getElementsByTagName("trace")
@@ -35,6 +51,7 @@ def handle_test(filename):
                         event_list.append(n.attributes["value"].value)
                 except:
                     pass
+
 
         L.append(event_list)
     print(L)

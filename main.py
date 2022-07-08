@@ -71,6 +71,9 @@ def upload():
 		file.save(os.path.join("upload_folder", filename))
 		lll = handle_test(image)
 
+		# TODO 完成图片生成函数, 保存图片到 static 目录下
+		# 这里合适算法生成图片后保存到 static 目录下
+		# 并把文件名赋值给 image 变量
 		image = parse_data(lll)
 		print(lll)
 	# return redirect(url_for(".ports/image", image=image), code=302)
@@ -78,22 +81,5 @@ def upload():
 
 app.register_blueprint(hai)
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
-
-
-@app.route('/contact')
-def contact():
-    return render_template("contact.html")
-
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
-
-def main():
-	if __name__ == '__main__':
-		app.run(host="::1", port = 9012)
-main()

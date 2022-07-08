@@ -19,21 +19,16 @@ import pydot
 # L = [[a["concept:name"] for a in sig] for sig in L]
 # print(L)
 
-#frozenset : order-irrelevant
-#powerset at the beginning is an empty set
 def powerset(TL: set[str]) -> set[frozenset[str]]:
     powerset: set[frozenset[str]] = {frozenset()}
-    #find subsets from an empty set to other subsets which length is from 1 to N 
     for set_len in range(1, len(TL) + 1):
         # Find the set with set_len - 1 elements from the entire powerset
         for s in {s for s in powerset if len(s) == set_len - 1}:
             #Elements in TL, but not in S
-            for t in TL - s:
-                # add each appropriate element to s, 
-                # then we cen get a new set with lengeh set_len,
-                # then we put the new set into the entire powerset.           
+            for t in TL - s: 
                 powerset.add(s.union({t}))
     return powerset
+
 
 # L = ["abcd", "acbd"]
 #Step 1
@@ -61,9 +56,9 @@ def test_data(L):
                 mat[(b, a)] = "|"
 
     TI = {sig[0] for sig in L}
-    #print(TI)
+    print(TI)
     TO = {sig[-1] for sig in L}
-    #print(TO)
+    print(TO)
 
     XL = {
         (A, B)
