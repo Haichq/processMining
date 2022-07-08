@@ -52,14 +52,14 @@ def parse_data(data):
 	# 并保存到static目录下,并将图片名返回
 	return test_data(data)
 
-# @app.route("/image/<image>", methods = ["GET"])
+
 @hai.route("/image/<image>", methods = ["GET"])
 def image(image):
 	image = "ports/9012/static/{}".format(image)
 	print(image)
 	return render_template("index.html", image=image)
 
-# @app.route("/upload", methods = ["POST"])
+
 @hai.route("/upload", methods = ["POST"])
 def upload():
 	image=None
