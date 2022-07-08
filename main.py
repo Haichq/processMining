@@ -7,7 +7,7 @@ from graphviz import Digraph
 from alphaminer import test_data
 from handle_xes import handle_test
 
-
+hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
 app = Flask(__name__)
 
 
@@ -54,7 +54,9 @@ def image(image):
 	print(image)
 	return render_template("index.html", image=image)
 
-@app.route("/upload", methods = ["POST"])
+
+@hai.route("/upload", methods = ["POST"])
+# @app.route("/upload", methods = ["POST"])
 def upload():
 	image=None
 	file = request.files['file']
@@ -68,6 +70,7 @@ def upload():
 		image = parse_data(lll)
 		print(lll)
 	return redirect(url_for("image", image=image), code=302)
+app.register_blueprint(hai)
 
 @app.route('/about')
 def about():
