@@ -6,7 +6,6 @@ from xml.dom.minidom import parse
 from graphviz import Digraph
 from alphaminer import test_data
 from handle_xes import handle_test
-# from alphaminer import s_TITO,s_NoTITO,g,TI, TO,TL ,Digraph,YL
 hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
 
 app = Flask(__name__)

@@ -9,7 +9,7 @@ from numpy.lib.index_tricks import diag_indices
 import pm4py
 import os
 from graphviz import Digraph
-from handle_xes import L, handle_test
+from handle_xes import handle_test
 import pydot
 
 #frozenset : order-irrelevant
