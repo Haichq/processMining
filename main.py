@@ -73,7 +73,6 @@ def upload():
 	# return redirect(url_for(".ports/image", image=image), code=302)
 	return render_template("index.html", image=image)
 
-
 @hai.route("/about")
 def about():
 	return render_template("about.html")
