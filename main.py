@@ -6,9 +6,11 @@ from xml.dom.minidom import parse
 from graphviz import Digraph
 from alphaminer import test_data
 from handle_xes import handle_test
-hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
+# hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
+hai = Blueprint("hai", __name__, template_folder='templates')
 
 app = Flask(__name__)
+app.register_blueprint(hai,url_prefix="/ports/9012")
 
 @app.route("/index", methods = ["GET"])
 def hello_world():
@@ -80,7 +82,7 @@ def about():
 def contact():
 	return render_template("contact.html")
 
-app.register_blueprint(hai)
+# app.register_blueprint(hai,url_prefix="/ports/9012")
 
 if __name__ == '__main__':
     app.run(debug=True)
