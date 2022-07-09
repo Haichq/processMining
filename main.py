@@ -10,7 +10,6 @@ hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
 
 app = Flask(__name__)
 
-# @app.route("/index", methods = ["GET", "POST"])
 @app.route("/index", methods = ["GET"])
 def hello_world():
 	image=None
@@ -26,8 +25,6 @@ def hello_world():
 	return render_template("index.html", image=image)
 
 def parse_xes_file(path):
-    # dom1 = parse('webservice/upload_folder/L1.xes')
-	
     dom1 = parse(path)
 
     traces = dom1.getElementsByTagName("trace")
@@ -47,8 +44,8 @@ def parse_xes_file(path):
     return L
 
 def parse_data(data):
-	# TODO 在这里处理解析出来的数据生成图片后
-	# 并保存到static目录下,并将图片名返回
+	# parse date -> turn into petrinet 
+	# -> in static storage -> return petrinet 
 	return test_data(data)
 
 
@@ -69,15 +66,21 @@ def upload():
 		image= os.path.join("upload_folder", filename)
 		file.save(os.path.join("upload_folder", filename))
 		lll = handle_test(image)
-
-		# TODO 完成图片生成函数, 保存图片到 static 目录下
-		# 这里合适算法生成图片后保存到 static 目录下
-		# 并把文件名赋值给 image 变量
 		image = parse_data(lll)
 		print(lll)
 	# return redirect(url_for(".ports/image", image=image), code=302)
 	return render_template("index.html", image=image)
 
+app.register_blueprint(hai)
+
+@hai.route("/about")
+def about():
+	return render_template("about.html")
+
+@hai.route("/contact")
+def contact():
+	return render_template("contact.html")
+	
 app.register_blueprint(hai)
 
 if __name__ == '__main__':
