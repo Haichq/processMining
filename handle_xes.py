@@ -17,7 +17,6 @@ def handle_test(filename):
                 except:
                     pass
 
-
         L.append(event_list)
     print(L)
     print("handle_test")
