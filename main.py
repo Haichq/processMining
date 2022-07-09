@@ -10,7 +10,7 @@ from handle_xes import handle_test
 hai = Blueprint("hai", __name__, template_folder='templates')
 
 app = Flask(__name__)
-app.register_blueprint(hai,url_prefix="/ports/9012")
+
 
 @app.route("/index", methods = ["GET"])
 def hello_world():
@@ -73,7 +73,6 @@ def upload():
 	# return redirect(url_for(".ports/image", image=image), code=302)
 	return render_template("index.html", image=image)
 
-
 @hai.route("/about")
 def about():
 	return render_template("about.html")
@@ -82,7 +81,7 @@ def about():
 def contact():
 	return render_template("contact.html")
 
-# app.register_blueprint(hai,url_prefix="/ports/9012")
+app.register_blueprint(hai,url_prefix="/ports/9012")
 
 if __name__ == '__main__':
     app.run(debug=True)
