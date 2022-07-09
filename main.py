@@ -6,8 +6,8 @@ from xml.dom.minidom import parse
 from graphviz import Digraph
 from alphaminer import test_data
 from handle_xes import handle_test
-# hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
-hai = Blueprint("hai", __name__, template_folder='templates')
+hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
+
 
 app = Flask(__name__)
 
@@ -73,6 +73,7 @@ def upload():
 	# return redirect(url_for(".ports/image", image=image), code=302)
 	return render_template("index.html", image=image)
 
+
 @hai.route("/about")
 def about():
 	return render_template("about.html")
@@ -81,7 +82,7 @@ def about():
 def contact():
 	return render_template("contact.html")
 
-app.register_blueprint(hai,url_prefix="/ports/9012")
+app.register_blueprint(hai)
 
 if __name__ == '__main__':
     app.run(debug=True)
