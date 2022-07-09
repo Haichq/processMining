@@ -71,7 +71,6 @@ def upload():
 	# return redirect(url_for(".ports/image", image=image), code=302)
 	return render_template("index.html", image=image)
 
-app.register_blueprint(hai)
 
 @hai.route("/about")
 def about():
@@ -80,7 +79,7 @@ def about():
 @hai.route("/contact")
 def contact():
 	return render_template("contact.html")
-	
+
 app.register_blueprint(hai)
 
 if __name__ == '__main__':
