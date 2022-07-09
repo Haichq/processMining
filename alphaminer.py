@@ -12,20 +12,19 @@ from graphviz import Digraph
 from handle_xes import L, handle_test
 import pydot
 
-#READ Files 
-#L = pm4py.read_xes("datasets/L2.xes")
-
-#To get the node name
-# L = [[a["concept:name"] for a in sig] for sig in L]
-# print(L)
-
+#frozenset : order-irrelevant
+#powerset at the beginning is an empty set
 def powerset(TL: set[str]) -> set[frozenset[str]]:
     powerset: set[frozenset[str]] = {frozenset()}
+    #find subsets from an empty set to other subsets which length is from 1 to N 
     for set_len in range(1, len(TL) + 1):
         # Find the set with set_len - 1 elements from the entire powerset
         for s in {s for s in powerset if len(s) == set_len - 1}:
             #Elements in TL, but not in S
             for t in TL - s: 
+                # add each appropriate element to s, 
+                # then we cen get a new set with lengeh set_len,
+                # then we put the new set into the entire powerset. 
                 powerset.add(s.union({t}))
     return powerset
 
@@ -56,9 +55,9 @@ def test_data(L):
                 mat[(b, a)] = "|"
 
     TI = {sig[0] for sig in L}
-    print(TI)
+    # print(TI)
     TO = {sig[-1] for sig in L}
-    print(TO)
+    # print(TO)
 
     XL = {
         (A, B)
@@ -98,60 +97,60 @@ def test_data(L):
         return set(A) if isinstance(A, frozenset) else A
 
 
-    print("XL = ")
+    # print("XL = ")
     for A, B in XL:
         print("\t", (toSet(A), toSet(B)))
         
 
-    print("YL = ")
+    # print("YL = ")
     for A, B in YL:
         print("\t", (toSet(A), toSet(B)))
 
     return generate_graph(TI, TO, TL, YL)
-    #Petri Net
-    #set with first and last elements 
-    s_TITO = TI|TO
-    #set without first and last element 
-    s_NoTITO = TL - s_TITO
+    # #Petri Net
+    # #set with first and last elements 
+    # s_TITO = TI|TO
+    # #set without first and last element 
+    # s_NoTITO = TL - s_TITO
 
-    g = Digraph(comment='petri-net',format='png')
-    #iL node
-    g.node('iL',shape = 'circle') 
-    #first element
-    for first in TI:
-        g.node(name = first,shape = 'square') 
-    #the middle part
-    for s_no in s_NoTITO:
-        g.node(name = s_no,shape='square')
-    #last element
-    for last in TO:
-        g.node(name = last,shape = 'square')
-    #OL node
-    g.node('oL',shape = 'doublecircle')
+    # g = Digraph(comment='petri-net',format='png')
+    # #iL node
+    # g.node('iL',shape = 'circle') 
+    # #first element
+    # for first in TI:
+    #     g.node(name = first,shape = 'square') 
+    # #the middle part
+    # for s_no in s_NoTITO:
+    #     g.node(name = s_no,shape='square')
+    # #last element
+    # for last in TO:
+    #     g.node(name = last,shape = 'square')
+    # #OL node
+    # g.node('oL',shape = 'doublecircle')
 
-    i = 0
+    # i = 0
     
-    for set_pairs in YL:
-        (set_first,set_second) = set_pairs
-        i += 1
-        name1 = str(i)  
-        g.node(name=name1,label='',shape = 'circle') 
+    # for set_pairs in YL:
+    #     (set_first,set_second) = set_pairs
+    #     i += 1
+    #     name1 = str(i)  
+    #     g.node(name=name1,label='',shape = 'circle') 
 
-        for set_name in set_second:
-            g.edge(tail_name=name1,head_name=set_name)
-        for set_name in set_first:
-            g.edge(tail_name=set_name,head_name= name1)
+    #     for set_name in set_second:
+    #         g.edge(tail_name=name1,head_name=set_name)
+    #     for set_name in set_first:
+    #         g.edge(tail_name=set_name,head_name= name1)
 
-    g.edges(('iL', first) for first in TI)
-    g.edges((last,'oL') for last in TO)
+    # g.edges(('iL', first) for first in TI)
+    # g.edges((last,'oL') for last in TO)
 
-    # g.view()
-    g.save("xes.dot", directory="static")
-    (graph,) = pydot.graph_from_dot_file('./static/xes.dot')
-    graph.write_png('./static/somefile.png')
-    return "somefile.png"
+    # # g.view()
+    # g.save("xes.dot", directory="static")
+    # (graph,) = pydot.graph_from_dot_file('./static/xes.dot')
+    # graph.write_png('./static/somefile.png')
+    # return "somefile.png"
 
-    print("tests...")
+    
 
 i = 0
 def circle_nodes():
