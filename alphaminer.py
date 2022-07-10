@@ -124,7 +124,8 @@ def generate_graph(TI, TO, TL, YL, XL):
 
     g = Digraph(comment='petri-net',format='png')
     #iL node
-    g.node('iL',shape = 'circle') 
+    # g.node('iL',shape = 'circle')
+    g.node(shape = 'circle') 
     #first element
     for first in TI:
         g.node(name = first,shape = 'square') 
@@ -135,7 +136,7 @@ def generate_graph(TI, TO, TL, YL, XL):
     for last in TO:
         g.node(name = last,shape = 'square')
     #OL node
-    g.node('oL',shape = 'doublecircle')
+    g.node(shape = 'doublecircle')
 
     for set_pairs in YL:
         (set_first,set_second) = set_pairs
@@ -155,6 +156,7 @@ def generate_graph(TI, TO, TL, YL, XL):
     (graph,) = pydot.graph_from_dot_file('./static/xes.dot')
     graph.write_png('./static/somefile.png')
     return "somefile.png"
+
 
 if __name__ == '__main__':
     # test_data(L)
