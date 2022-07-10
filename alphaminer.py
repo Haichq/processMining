@@ -106,51 +106,8 @@ def test_data(L):
     for A, B in YL:
         print("\t", (toSet(A), toSet(B)))
 
-    return generate_graph(TI, TO, TL, YL)
-    # #Petri Net
-    # #set with first and last elements 
-    # s_TITO = TI|TO
-    # #set without first and last element 
-    # s_NoTITO = TL - s_TITO
-
-    # g = Digraph(comment='petri-net',format='png')
-    # #iL node
-    # g.node('iL',shape = 'circle') 
-    # #first element
-    # for first in TI:
-    #     g.node(name = first,shape = 'square') 
-    # #the middle part
-    # for s_no in s_NoTITO:
-    #     g.node(name = s_no,shape='square')
-    # #last element
-    # for last in TO:
-    #     g.node(name = last,shape = 'square')
-    # #OL node
-    # g.node('oL',shape = 'doublecircle')
-
-    # i = 0
-    
-    # for set_pairs in YL:
-    #     (set_first,set_second) = set_pairs
-    #     i += 1
-    #     name1 = str(i)  
-    #     g.node(name=name1,label='',shape = 'circle') 
-
-    #     for set_name in set_second:
-    #         g.edge(tail_name=name1,head_name=set_name)
-    #     for set_name in set_first:
-    #         g.edge(tail_name=set_name,head_name= name1)
-
-    # g.edges(('iL', first) for first in TI)
-    # g.edges((last,'oL') for last in TO)
-
-    # # g.view()
-    # g.save("xes.dot", directory="static")
-    # (graph,) = pydot.graph_from_dot_file('./static/xes.dot')
-    # graph.write_png('./static/somefile.png')
-    # return "somefile.png"
-
-    
+    # return generate_graph(TI, TO, TL, YL)
+    return TI, TO, TL, YL,XL
 
 i = 0
 def circle_nodes():
