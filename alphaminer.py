@@ -106,7 +106,7 @@ def test_data(L):
     for A, B in YL:
         print("\t", (toSet(A), toSet(B)))
 
-    # return generate_graph(TI, TO, TL, YL)
+
     return TI, TO, TL, YL,XL
 
 i = 0
