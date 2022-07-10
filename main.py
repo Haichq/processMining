@@ -49,7 +49,7 @@ def parse_data(data):
 	# parse date -> turn into petrinet 
 	# -> in static storage -> return petrinet 
 	TI, TO, TL, YL, XL = test_data(data)
-	return generate_graph(TI, TO, TL, XL,YL)
+	return generate_graph(TI, TO, TL,YL,XL)
 
 
 @hai.route("/image/<image>", methods = ["GET"])
