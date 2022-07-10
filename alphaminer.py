@@ -115,7 +115,7 @@ def circle_nodes():
     i +=1
     return str(i)
 
-def generate_graph(TI, TO, TL, YL):
+def generate_graph(TI, TO, TL, YL, XL):
      #Petri Net
     #set with first and last elements 
     s_TITO = TI|TO
