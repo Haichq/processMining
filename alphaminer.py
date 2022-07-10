@@ -84,11 +84,12 @@ def test_data(L):
     }
 
     PL = {(A, B) for (A, B) in YL}
-    PL.update({"iL", "oL"})
+    # PL.update({"iL", "oL"})
 
     FL = {(a, (A, B)) for (A, B) in YL for a in A}
     FL.update({((A, B), b) for (A, B) in YL for b in B})
-    FL.update({("iL", t) for t in TI}.union({(t, "oL") for t in TO}))
+    # FL.update({("iL", t) for t in TI}.union({(t, "oL") for t in TO}))
+    FL.update({t for t in TI}.union({t for t in TO}))
 
 
     def toSet(A: Any) -> Any:
@@ -148,8 +149,10 @@ def generate_graph(TI, TO, TL, YL, XL):
         for set_name in set_first:
             g.edge(tail_name=set_name,head_name= name1)
 
-    g.edges(('iL', first) for first in TI)
-    g.edges((last,'oL') for last in TO)
+    # g.edges(('iL', first) for first in TI)
+    g.edges(first for first in TI)
+    # g.edges((last,'oL') for last in TO)
+    g.edges((last) for last in TO)
 
     # g.view()
     g.save("xes.dot", directory="static")
