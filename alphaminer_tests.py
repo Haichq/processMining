@@ -179,20 +179,20 @@ class Test_Alpha(unittest.TestCase):
         self.assertEqual(YL, checkYL)
         self.assertEqual(XL, checkXL)
 
-    # def test_L7(self):
-    #     result = handle_test("datasets/L7.xes")
-    #     TI, TO, TL, YL, XL = test_data(result)
-    #     self.assertEqual(TI, {'a'})
-    #     self.assertEqual(TO, {'c'})
-    #     self.assertEqual(TL, {'a','b','c'})
-    #     checkXL = {
-    #         (frozenset({'a'}), frozenset({'c'}))
-    #     }
-    #     checkYL = {
-    #         (frozenset({'a'}), frozenset({'c'}))
-    #     }
-    #     self.assertEqual(YL, checkYL)
-    #     self.assertEqual(XL, checkXL)
+    def test_L7(self):
+        result = handle_test("datasets/L7.xes")
+        TI, TO, TL, YL, XL = test_data(result)
+        self.assertEqual(TI, {'a'})
+        self.assertEqual(TO, {'c'})
+        self.assertEqual(TL, {'a','b','c'})
+        checkXL = {
+            (frozenset({'a'}), frozenset({'c'}))
+        }
+        checkYL = {
+            (frozenset({'a'}), frozenset({'c'}))
+        }
+        self.assertEqual(YL, checkYL)
+        self.assertEqual(XL, checkXL)
 
     def test_Lrenning(self):
         result = handle_test("datasets/running-example.xes")

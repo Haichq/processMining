@@ -54,6 +54,13 @@ def test_data(L):
                 mat[(a, b)] = "|"
                 mat[(b, a)] = "|"
 
+    mat = {(t1, t2, t3): "#" for t1 in TL for t2 in TL for t3 in TL}
+    for sig in L:
+            if a == a == a:
+                mat[(a, b)] = "#"
+
+
+
     TI = {sig[0] for sig in L}
     # print(TI)
     TO = {sig[-1] for sig in L}
