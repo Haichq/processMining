@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, session, url_for, B
 from werkzeug.utils import secure_filename
 from xml.dom.minidom import parse
 from graphviz import Digraph
-from alphaminer import test_data
+from alphaminer import test_data, generate_graph
 from handle_xes import handle_test
 hai = Blueprint("hai", __name__, url_prefix="/ports/9012")
 
@@ -48,7 +48,8 @@ def parse_xes_file(path):
 def parse_data(data):
 	# parse date -> turn into petrinet 
 	# -> in static storage -> return petrinet 
-	return test_data(data)
+	TI, TO, TL, YL, XL = test_data(data)
+	return generate_graph(TI, TO, TL, XL,YL)
 
 
 @hai.route("/image/<image>", methods = ["GET"])
