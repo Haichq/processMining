@@ -43,11 +43,12 @@ def test_data(L):
             # e.g. L = [<a,b,c,d>,<a,c,b,d>]
             #--> ab,bc, cd, ac,cb,bd
             if mat[(a, b)] == "#":
-                if a == b:         
-                    mat[(a, b)] = "|"  # token
-                
-                    # L7
-                    #mat[(a, b)] = "#"
+                if a == b:     
+                    mat[(a, b)] = "#"    
+
+                    #change “#” to “|”, if you read L7.xes！！！！
+                    # mat[(a, b)] = "|"  
+                    
                 else:
                     mat[(a, b)] = ">"
                     mat[(b, a)] = "<"
