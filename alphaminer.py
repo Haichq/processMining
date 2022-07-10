@@ -45,7 +45,7 @@ def test_data(L):
             if mat[(a, b)] == "#":
                 if a == b:         
                     mat[(a, b)] = "#"  # token
-                elif b == b == b:
+                elif a == a:
                         mat[(a, b)] = "#"
                     # L7
                     #mat[(a, b)] = "#"
