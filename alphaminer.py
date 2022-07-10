@@ -45,8 +45,7 @@ def test_data(L):
             if mat[(a, b)] == "#":
                 if a == b:         
                     mat[(a, b)] = "#"  # token
-                elif mat[(a, a)] == "#" and mat[(b, b)] == "#":
-                        mat[(a, b)] = "#"
+                
                     # L7
                     #mat[(a, b)] = "#"
                 else:
@@ -55,9 +54,10 @@ def test_data(L):
             elif mat[(a, b)] == "<":
                 mat[(a, b)] = "|"
                 mat[(b, a)] = "|"
-
-
-
+    for sig in L:
+        for a, b, c in zip(sig[:-2],sig[1:-1],sig[2:]):
+            if a == b == c:
+                mat[(a,a)] = "#"
 
 
     TI = {sig[0] for sig in L}
