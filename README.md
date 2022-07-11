@@ -49,7 +49,7 @@ export FLASK_APP=main
 ```
 flask run --host=:: --port=9012
 ```
-- [ ] **access the url:**
+- [ ] **access the webapp url:**
 ```
 https://lehre.bpm.in.tum.de/ports/9012/index
 ```
@@ -77,7 +77,6 @@ You should always get back to the page first, if you want to use another fuction
 process-mining 
 
 │   handle_xes.py <br />
-│   handle_xes_test.py <br />
 │   alphaminer.py <br />
 │   alphaminer_tests.py <br />
 │   main.py <br />
@@ -96,10 +95,6 @@ process-mining
 │   │   index.html <br />
 │   <br />
 └───upload _folder <br />
-│   │   L1.xes <br />
-│   │   L2.xes <br />
-│   │   L3.xes <br />
-│   │   ... <br />
 │   <br />
 └───datasets <br />
 │   │   L1.xes <br />
