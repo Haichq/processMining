@@ -4,16 +4,19 @@ digraph {
 	a [shape=square]
 	b [shape=square]
 	c [shape=square]
+	d [shape=square]
+	e [shape=square]
 	oL [shape=doublecircle]
 	1 [label="" shape=circle]
 	1 -> c
 	a -> 1
+	b -> 1
 	2 [label="" shape=circle]
-	2 -> c
-	b -> 2
-	3 [label="" shape=circle]
-	3 -> b
-	a -> 3
+	2 -> d
+	2 -> e
+	c -> 2
 	iL -> a
-	c -> oL
+	iL -> b
+	d -> oL
+	e -> oL
 }

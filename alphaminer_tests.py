@@ -179,6 +179,9 @@ class Test_Alpha(unittest.TestCase):
         self.assertEqual(YL, checkYL)
         self.assertEqual(XL, checkXL)
 
+
+# You should change the symbol "#"" to "|"" in alphaminer.py
+# in LINE 47, so that the test can be passed!
     def test_L7(self):
         result = handle_test("datasets/L7.xes")
         TI, TO, TL, YL, XL = test_data(result)
