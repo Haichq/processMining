@@ -3,7 +3,6 @@ from xml.dom.minidom import parse
 
 def handle_test(filename):
     dom1 = parse(filename)
-
     traces = dom1.getElementsByTagName("trace")
     L = []
     for trace in traces:

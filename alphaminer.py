@@ -13,6 +13,7 @@ from handle_xes import handle_test
 import pydot
 
 #frozenset : order-irrelevant
+#powerset can get all subsets of a set 
 #powerset at the beginning is an empty set
 def powerset(TL: set[str]) -> set[frozenset[str]]:
     powerset: set[frozenset[str]] = {frozenset()}
@@ -23,14 +24,12 @@ def powerset(TL: set[str]) -> set[frozenset[str]]:
             #Elements in TL, but not in S
             for t in TL - s: 
                 # add each appropriate element to s, 
-                # then we cen get a new set with lengeh set_len,
+                # then we cen get a new set with length "set_len",
                 # then we put the new set into the entire powerset. 
                 powerset.add(s.union({t}))
     return powerset
 
 
-# L = ["abcd", "acbd"]
-#Step 1
 def test_data(L):
     TL = {t for sig in L for t in sig}
     print("TL = " )
@@ -44,9 +43,8 @@ def test_data(L):
             #--> ab,bc, cd, ac,cb,bd
             if mat[(a, b)] == "#":
                 if a == b:     
-                    mat[(a, b)] = "#"  
-             
-                    #change “#” to “|”, if you read L7.xes！！！！
+                    mat[(a, b)] = "#"             
+                    #change “#” to “|” for reading L7.xes
                     # mat[(a, b)] = "|"  
                 else:
                     mat[(a, b)] = ">"
@@ -121,7 +119,7 @@ def circle_nodes():
     return str(i)
 
 def generate_graph(TI, TO, TL, YL, XL):
-     #Petri Net
+    #Petri Net
     #set with first and last elements 
     s_TITO = TI|TO
     #set without first and last element 
