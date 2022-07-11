@@ -86,24 +86,24 @@ process-mining
 │   │   backgroud.jpeg<br />
 │   │   munich.png<br />
 │   │   somefile.png<br />
-│   │   ...
-│
-└───templates 
-│   │   contact.html
-│   │   about.html
-│   │   index.html
-│  
-└───upload _folder
-│   │   L1.xes
-│   │   L2.xes
-│   │   L3.xes
-│   │   ...
-│ 
-└───datasets
-│   │   L1.xes
-│   │   L2.xes
-│   │   L3.xes
-│   │   ...
+│   │   ...<br />
+│   <br />
+└───templates <br />
+│   │   contact.html <br />
+│   │   about.html <br />
+│   │   index.html <br />
+│   <br />
+└───upload _folder <br />
+│   │   L1.xes <br />
+│   │   L2.xes <br />
+│   │   L3.xes <br />
+│   │   ... <br />
+│   <br />
+└───datasets <br />
+│   │   L1.xes <br />
+│   │   L2.xes <br />
+│   │   L3.xes <br />
+│   │   ... <br />
 
 
 ## Installation
