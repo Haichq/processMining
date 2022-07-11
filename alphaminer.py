@@ -44,11 +44,13 @@ def test_data(L):
             #--> ab,bc, cd, ac,cb,bd
             if mat[(a, b)] == "#":
                 if a == b:     
-                    mat[(a, b)] = "#"    
+                    mat[(a, b)] = "#"  
+                    for a , b , c in zip(sig[:2], sig[1:-1], sig[2:]):
+                        if a == b == c:
+                            mat [(a,b)] == "|"  
 
                     #change “#” to “|”, if you read L7.xes！！！！
                     # mat[(a, b)] = "|"  
-                    
                 else:
                     mat[(a, b)] = ">"
                     mat[(b, a)] = "<"
