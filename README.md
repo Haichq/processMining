@@ -9,12 +9,21 @@ Link: https://en.wikipedia.org/wiki/Alpha_algorithm
 
 ## Connect to the Lehrer Server
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+- [ ] Connect to lehre server via ssh:
 ```
 ssh ge35tuy@lehre.bpm.in.tum.de
+```
+- [ ] Passphrase for key:
+```
 rwVYNEH4BEPIkEBnLvNn8QHD_DEmJp0gm
+```
+
+- [ ] clone gitlab project:
+```
+git clone https://gitlab.lrz.de/00000000014A5ED1/process-mining-6.semester.git
+```
+- [ ] Then you should execute the commands as following :
+```
 ls
 cd pm_internship
 python3 -m venv tutorial-env
@@ -27,16 +36,34 @@ pip3 install flask
 pip3 install graphviz
 pip3 install numpy
 pip3 install pydot
+```
+- [ ] provide environment variable :
+```
 export FLASK_APP=main
+```
+- [ ] run the project:
+```
 flask run --host=:: --port=9012
+```
+- [ ] access the url:
+```
 https://lehre.bpm.in.tum.de/ports/9012/index
+```
+- [ ] quit the app:
+```
 CTRL+C
-
 ```
 
-## Integrate with your tools
+## Technologies
 
-- [ ] [Set up project integrations](https://gitlab.lrz.de/00000000014A5ED1/process-mining-6.semester/-/settings/integrations)
+- [ ] Python 3.10
+- [ ] Flask
+- [ ] Bootstrap 4
+- [ ] Javascript
+- [ ] css
+- [ ] Graphviz
+- [ ] Minidom
+
 
 ## Collaborate with your team
 
