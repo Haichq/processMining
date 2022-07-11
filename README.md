@@ -7,16 +7,31 @@
 The α-algorithm or α-miner is an algorithm used in process mining, aimed at reconstructing causality from a set of sequences of events. It was first put forward by van der Aalst, Weijters and Măruşter.[1] The goal of Alpha miner is to convert the event log into a workflow-net based on the relations between various activities in the event log. An event log is a multi-set of traces, and a trace is a sequence of activity names. 
 Link: https://en.wikipedia.org/wiki/Alpha_algorithm
 
-## Installation
+## Connect to the Lehrer Server
 
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.lrz.de/00000000014A5ED1/process-mining-6.semester.git
-git branch -M main
-git push -uf origin main
+ssh ge35tuy@lehre.bpm.in.tum.de
+rwVYNEH4BEPIkEBnLvNn8QHD_DEmJp0gm
+ls
+cd pm_internship
+python3 -m venv tutorial-env
+source tutorial-env/bin/activate
+ls
+cd process-mining-6.semester
+pip3 freeze > requirements.txt
+pip3 install -r requirements.txt
+pip3 install flask
+pip3 install graphviz
+pip3 install numpy
+pip3 install pydot
+export FLASK_APP=main
+flask run --host=:: --port=9012
+https://lehre.bpm.in.tum.de/ports/9012/index
+CTRL+C
+
 ```
 
 ## Integrate with your tools
