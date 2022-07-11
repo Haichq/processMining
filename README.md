@@ -9,20 +9,20 @@ Link: **https://en.wikipedia.org/wiki/Alpha_algorithm**
 
 ## Connect to the Lehrer Server
 
-- [ ] Connect to lehre server via ssh:
+- [ ] **Connect to lehre server via ssh:**
 ```
 ssh ge35tuy@lehre.bpm.in.tum.de
 ```
-- [ ] Passphrase for key:
+- [ ] **Passphrase for key:**
 ```
 rwVYNEH4BEPIkEBnLvNn8QHD_DEmJp0gm
 ```
 
-- [ ] clone gitlab project:
+- [ ] **clone gitlab project:**
 ```
 git clone https://gitlab.lrz.de/00000000014A5ED1/process-mining-6.semester.git
 ```
-- [ ] Then you should execute the commands as following :
+- [ ] **Then you should execute the commands as following:**
 ```
 ls
 cd pm_internship
@@ -37,19 +37,19 @@ pip3 install graphviz
 pip3 install numpy
 pip3 install pydot
 ```
-- [ ] provide environment variable :
+- [ ] **provide environment variable:**
 ```
 export FLASK_APP=main
 ```
-- [ ] run the project:
+- [ ] **run the project:**
 ```
 flask run --host=:: --port=9012
 ```
-- [ ] access the url:
+- [ ] **access the url:**
 ```
 https://lehre.bpm.in.tum.de/ports/9012/index
 ```
-- [ ] quit the app:
+- [ ] **quit the app:**
 ```
 CTRL+C
 ```
@@ -69,24 +69,44 @@ CTRL+C
 ```
 pip3 install flask
 ```
-## Installation
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## Webservice display
 
-## Test and Deploy
+If you want to upload a new xes file, you need to go back to the page which the its url ** https://lehre.bpm.in.tum.de/ports/9012/index ** is.
+You should always get back to the page, if you want to use another fuctionalities, such as **About** and **Contact Me**.
 
-Use the built-in continuous integration in GitLab.
+## project Structure
+process-mining 
+│   handle_xes.py
+│   handle_xes_test.py
+│   alphaminer.py
+│   alphaminer_tests.py
+│   main.py
+│   README.md  
+│   requirements.txt
+│
+└───static
+│   │   backgroud.jpeg
+│   │   munich.png
+│   │   somefile.png
+│   │   ...
+│
+└───templates 
+│   │   contact.html
+│   │   about.html
+│   │   index.html
+│  
+└───upload _folder
+│   │   L1.xes
+│   │   L2.xes
+│   │   L3.xes
+│   │   ...
+│ 
+└───datasets
+│   │   L1.xes
+│   │   L2.xes
+│   │   L3.xes
+│   │   ...
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
 
 # Editing this README
 
