@@ -5,7 +5,7 @@
 ## Introduction about Alpha Miner
 
 The α-algorithm or α-miner is an algorithm used in process mining, aimed at reconstructing causality from a set of sequences of events. It was first put forward by van der Aalst, Weijters and Măruşter.[1] The goal of Alpha miner is to convert the event log into a workflow-net based on the relations between various activities in the event log. An event log is a multi-set of traces, and a trace is a sequence of activity names. 
-Link: https://en.wikipedia.org/wiki/Alpha_algorithm
+Link: **https://en.wikipedia.org/wiki/Alpha_algorithm**
 
 ## Connect to the Lehrer Server
 
@@ -65,8 +65,11 @@ CTRL+C
 - [ ] Minidom
 
 
-## Collaborate with your team
-
+## Installation
+```
+pip3 install flask
+```
+## Installation
 - [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
 - [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 - [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
