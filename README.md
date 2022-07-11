@@ -89,7 +89,6 @@ You should always get back to the page first, if you want to use another fuction
 ## Contact
 
 email address: hai.chunqing@gmail.com
-[mailto](mailto:hai.chunqing@gmail.com)
 
 
 
