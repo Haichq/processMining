@@ -82,7 +82,7 @@ pip3 install -r requirements.txt
 ```
 ## Webservice display
 
-If you want to upload a new xes file, you need to go back to the page which its url ** https://lehre.bpm.in.tum.de/ports/9012/index ** is.
+If you want to upload a new xes file, you need to go back to the page which its url **https://lehre.bpm.in.tum.de/ports/9012/index** is.
 
 You should always get back to the page first, if you want to use another fuctionalities, such as **About** and **Contact Me**.
 
@@ -90,11 +90,8 @@ You should always get back to the page first, if you want to use another fuction
 process-mining 
 
 │   handle_xes.py
-
 │   handle_xes_test.py
-
 │   alphaminer.py
-
 │   alphaminer_tests.py
 │   main.py
 │   README.md  
