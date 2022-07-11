@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 
 @app.route("/index", methods = ["GET"])
-def hello_world():
+def image_upload():
 	image=None
 	if request.method == "POST":
 		file = request.files['file']
@@ -23,13 +23,13 @@ def hello_world():
 			filename = secure_filename(file.filename)
 			image= os.path.join("upload_folder", filename)
 			file.save(os.path.join("upload_folder", filename))
-			print('file uploaded successfully!') 
-		return redirect(url_for("index"), code=302)
+		return redirect(url_for("index"), code=302)  # 302:status code, FOUND
 	return render_template("index.html", image=image)
 
-def parse_xes_file(path):
-    dom1 = parse(path)
 
+def parse_xes_file(path):
+	#parse the traces and events
+    dom1 = parse(path)
     traces = dom1.getElementsByTagName("trace")
     L = []
     for trace in traces:
@@ -40,6 +40,7 @@ def parse_xes_file(path):
                 try:
                     if n.attributes['key'].value == "concept:name":
                         event_list.append(n.attributes["value"].value)
+				# error -> break for schleife  
                 except:
                     pass
 
@@ -47,11 +48,11 @@ def parse_xes_file(path):
     return L
 
 def parse_data(data):
+
 	# parse date -> turn into petrinet 
 	# -> in static storage -> return petrinet 
 	TI, TO, TL, YL, XL = test_data(data)
 	return generate_graph(TI, TO, TL,YL,XL)
-	# return test_data(data)
 
 
 @hai.route("/image/<image>", methods = ["GET"])
@@ -73,7 +74,6 @@ def upload():
 		lll = handle_test(image)
 		image = parse_data(lll)
 		print(lll)
-	# return redirect(url_for(".ports/image", image=image), code=302)
 	return render_template("index.html", image=image)
 
 
