@@ -17,15 +17,17 @@ ssh ge35tuy@lehre.bpm.in.tum.de
 ```
 rwVYNEH4BEPIkEBnLvNn8QHD_DEmJp0gm
 ```
-
+- [ ] **into the folder**
+```
+ls
+cd pm_internship
+```
 - [ ] **clone gitlab project:**
 ```
 git clone https://gitlab.lrz.de/00000000014A5ED1/process-mining-6.semester.git
 ```
 - [ ] **Then you should execute the commands as following:**
 ```
-ls
-cd pm_internship
 python3 -m venv tutorial-env
 source tutorial-env/bin/activate
 ls
@@ -72,24 +74,18 @@ You should always get back to the page first, if you want to use another fuction
 ## project Structure
 process-mining 
 
-│   handle_xes.py
-│ 
-│   handle_xes_test.py
-│ 
-│   alphaminer.py
-│ 
-│   alphaminer_tests.py
-│ 
-│   main.py
-│ 
-│   README.md  
-│ 
-│   requirements.txt
-│
-└───static
-│   │   backgroud.jpeg
-│   │   munich.png
-│   │   somefile.png
+│   handle_xes.py <br />
+│   handle_xes_test.py <br />
+│   alphaminer.py <br />
+│   alphaminer_tests.py <br />
+│   main.py <br />
+│   README.md  <br />
+│   requirements.txt<br />
+│   <br />
+└───static <br />
+│   │   backgroud.jpeg<br />
+│   │   munich.png<br />
+│   │   somefile.png<br />
 │   │   ...
 │
 └───templates 
