@@ -66,18 +66,33 @@ CTRL+C
 
 
 ## Installation
+**Flask**
 ```
 pip3 install flask
 ```
+**virtual environment**
+```
+python3 -m venv tutorial-env
+source tutorial-env/bin/activate
+```
+**requirements.txt**
+```
+pip3 freeze > requirements.txt
+pip3 install -r requirements.txt
+```
 ## Webservice display
 
-If you want to upload a new xes file, you need to go back to the page which the its url ** https://lehre.bpm.in.tum.de/ports/9012/index ** is.
-You should always get back to the page, if you want to use another fuctionalities, such as **About** and **Contact Me**.
+If you want to upload a new xes file, you need to go back to the page which its url ** https://lehre.bpm.in.tum.de/ports/9012/index ** is.
+|
+
+You should always get back to the page first, if you want to use another fuctionalities, such as **About** and **Contact Me**.
 
 ## project Structure
 process-mining 
 │   handle_xes.py
+|
 │   handle_xes_test.py
+|
 │   alphaminer.py
 │   alphaminer_tests.py
 │   main.py
