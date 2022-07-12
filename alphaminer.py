@@ -154,14 +154,13 @@ def generate_graph(TI, TO, TL, YL, XL):
     g.edges((last,'oL') for last in TO)
    
 
-    # g.view()
     g.save("xes.dot", directory="static")
     (graph,) = pydot.graph_from_dot_file('./static/xes.dot')
+    #save the file (photo) to specified folder
     graph.write_png('./static/somefile.png')
     return "somefile.png"
 
 
 if __name__ == '__main__':
-    # test_data(L)
     ll = handle_test()
     test_data(ll)
