@@ -1,6 +1,8 @@
 import os
 from xml.dom.minidom import parse
 
+
+# parse the traces and events 
 def handle_test(filename):
     dom1 = parse(filename)
     traces = dom1.getElementsByTagName("trace")
