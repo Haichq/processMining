@@ -1,9 +1,3 @@
-# class Test_Alpha(unittest.TestCase):
-#     def test_step_1(self):
-#         result = alphaminer.TL(['a', 'e', 'd'], ['a', 'c', 'b', 'd'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd'], ['a', 'c', 'b', 'd'])
-#         self.assertEqual(result,['e', 'd', 'a', 'b', 'c'])
-
-
 from cProfile import run
 import unittest
 from handle_xes import handle_test
