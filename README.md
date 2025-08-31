@@ -9,54 +9,6 @@ Link: **https://en.wikipedia.org/wiki/Alpha_algorithm**
 
 ## Connect to the Lehrer Server
 
-- [ ] **Connect to lehre server via ssh:**
-```
-ssh ge35tuy@lehre.bpm.in.tum.de
-```
-- [ ] **Passphrase for key:**
-```
-rwVYNEH4BEPIkEBnLvNn8QHD_DEmJp0gm
-```
-- [ ] **into the folder**
-```
-ls
-```
-```
-cd pm_internship
-```
-- [ ] **clone gitlab project:**
-```
-git clone https://gitlab.lrz.de/00000000014A5ED1/process-mining-6.semester.git
-```
-- [ ] **Then you should execute the commands as following:**
-```
-python3 -m venv tutorial-env
-source tutorial-env/bin/activate
-ls
-cd process-mining-6.semester
-pip3 freeze > requirements.txt
-pip3 install -r requirements.txt
-pip3 install flask
-pip3 install graphviz
-pip3 install numpy
-pip3 install pydot
-```
-- [ ] **provide environment variable:**
-```
-export FLASK_APP=main
-```
-- [ ] **run the project:**
-```
-flask run --host=:: --port=9012
-```
-- [ ] **access the webapp url:**
-```
-https://lehre.bpm.in.tum.de/ports/9012/index
-```
-- [ ] **quit the app:**
-```
-CTRL+C
-```
 ## Webservice display
 
 If you want to upload a new xes file, you need to go back to the page which its url **https://lehre.bpm.in.tum.de/ports/9012/index** is.
@@ -121,7 +73,7 @@ pip3 install -r requirements.txt
 
 ## Contact
 
-email address: hai.chunqing@gmail.com
+email address: chunqing.hao@tum.de
 
 
 
