@@ -11,10 +11,6 @@ Link: **https://en.wikipedia.org/wiki/Alpha_algorithm**
 
 ## Webservice display
 
-If you want to upload a new xes file, you need to go back to the page which its url **https://lehre.bpm.in.tum.de/ports/9012/index** is.
-
-You should always get back to the page first, if you want to use another fuctionalities, such as **About** and **Contact Me**.
-
 ## Technologies
 
 - [ ] Python 3.10
